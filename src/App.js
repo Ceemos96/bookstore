@@ -1,8 +1,19 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Booklist from './components/Booklist';
+import Category from './components/Category';
 import './App.css';
 
 function App() {
   return (
-    <h1>Bookstore App</h1>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Booklist />} />
+        <Route path="/category" element={<Category />} />
+      </Routes>
+    </div>
+
   );
 }
 
