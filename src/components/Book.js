@@ -1,9 +1,7 @@
-/* eslint-disable import/extensions */
-/* eslint-disable react/prop-types */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { RemoveBook } from '../Redux/Books/Books.js';
+import { RemoveBook } from '../Redux/Books/Books';
 
 const Book = ({ data: { title, author, id } }) => {
   const dispatch = useDispatch();
@@ -25,6 +23,19 @@ const Book = ({ data: { title, author, id } }) => {
       </ul>
     </div>
   );
+};
+
+Book.defaultProps = {
+  title: null,
+  author: null,
+  id: null,
+};
+
+Book.propTypes = {
+  data: PropTypes.instanceOf(Object).isRequired,
+  author: PropTypes.string,
+  title: PropTypes.string,
+  id: PropTypes.number,
 };
 
 export default Book;
