@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux/';
-import { AddBook } from '../Redux/Books/Books';
+import { addbook } from '../Redux/Books/asyncActions';
 
 const InputBook = () => {
   const dispatch = useDispatch();
@@ -8,19 +9,23 @@ const InputBook = () => {
   const [input, setInput] = useState({
     title: '',
     author: '',
+    category: '',
+    item_id: '',
   });
 
   const handleKeydown = (event) => {
     setInput({
       ...input,
       [event.target.name]: event.target.value,
+      category: 'Fiction',
+      item_id: uuidv4(),
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (input.title.trim() && input.author.trim()) {
-      dispatch(AddBook(input));
+      dispatch(addbook(input)).then((data) => data);
     }
     setInput({
       title: '',
