@@ -13,11 +13,12 @@ body {
 }
 
 .nav-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.3fr 1.07fr 0.03fr;
   width: 100vw;
   background-color: white;
-  justify-content: space-around;
   padding: 1rem 2rem;
+  margin-bottom: 4rem;
 }
 
 .nav-links {
@@ -36,6 +37,7 @@ a.nav-title {
   font-family: Montserrat, serif;
   font-weight: bold;
   padding-top: 0.5rem;
+  margin-left: 1rem;
 }
 
 .nav-item {
@@ -202,7 +204,7 @@ a.nav-title {
 /* form styles */
 
 .form-container {
-  margin: 1rem 2rem;
+  margin: 1rem 2rem;;
 }
 
 .form-title {
@@ -226,7 +228,7 @@ a.nav-title {
 
 .input-fields {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .input-fields button {
