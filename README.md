@@ -14,7 +14,7 @@
 - Babel
 
 ## Link to project online
-- [Online Version]()
+- [Online Version](https://632f2527815f092b71a9f852--lucent-pegasus-94c633.netlify.app/)
 
 ## Getting Started
 
